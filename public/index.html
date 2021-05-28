@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -25,19 +23,87 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="../">
+</head>
+
+<body>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <div class="grid_container grid_active">
+        <div class="sidenav">
+            <h1 style="display: none;" class="logo_h">S</h1>
+            <h1 class="logo_h">Samo</h1>
+            <hr>
+            <ul>
+                <li style="margin-bottom: 20px;">
+                    <a class="closebtn">
+                        <img class="toggle active" src="icons/sidebar/open.svg" alt="close"><span>Свернуть</span>
+                    </a>
+                </li>
+                <li class="active_li">
+                    <a href="#"><img class="img img_active" src="icons/sidebar/balance-wheels.svg" alt="balance"><span>Колесо
+                          баланса</span></a>
+                </li>
+                <li>
+                    <a href="#"><img class="img_nav img_active" src="icons/sidebar/diary.svg" alt="diary"><span>Дневник</span></a>
+                </li>
+                <li>
+                    <a href="#"><img class="img_nav img_active" src="icons/sidebar/calendar.svg" alt="calendar"><span>Календарь</span></a>
+                </li>
+                <li>
+                    <a href="#"><img class="img_nav img_active" src="icons/sidebar/purposes.svg" alt="purpose"><span>Мои
+                          цели</span></a>
+                </li>
+                <li>
+                    <a href="values.html"><img class="img_nav img_active" src="icons/sidebar/values.svg" alt="values"><span>Мои
+                          ценности</span></a>
+                </li>
+                <li>
+                    <a href="#"><img class="img_nav img_active" src="icons/sidebar/results.svg" alt="results"><span>Итоги</span></a>
+                </li>
+                <li style="margin-bottom: 108px;">
+                    <a href="#"><img class="img_nav img_active" src="icons/sidebar/list.svg" alt="list"><span>Список
+                          книг<br> и
+                          фильмов</span></a>
+                </li>
+                <li style="margin-bottom: 8px;">
+                    <a href="#"><img class="img_nav img_active" src="icons/sidebar/settings.svg" alt="settings"><span>Настройки</span></a>
+                </li>
+            </ul>
+            <button class="btn btn_active">Выйти</button>
+        </div>
+        <div class="header">
+            <h1>Итоги</h1>
+            <div class="header_profile">
+                <div class="header-icons">
+                    <img class="icon_search" src="icons/search.svg" alt="search">
+                    <img class="icon_push" src="icons/push.svg" alt="push">
+                </div>
+                <div class="profile">
+                    <span>Ксюша Донская</span>
+                    <img src="../src/img/profile.png" alt="profile">
+                </div>
+            </div>
+        </div>
+        <div id="root">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+        </div>
+
+
+        <script>
+            const sidenav = document.querySelector('.sidenav');
+            const btn = document.querySelector('.btn');
+            const img_nav = document.querySelector('.img_nav');
+            const grid_container = document.querySelector('.grid_container');
+            document.querySelector('.toggle').onclick = function() {
+                this.classList.toggle('active');
+                sidenav.classList.toggle('active');
+                btn.classList.toggle('btn_active');
+                img_nav.classList.toggle('img_active');
+                grid_container.classList.toggle('grid_active')
+            }
+        </script>
+</body>
+
 </html>

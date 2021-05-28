@@ -1,0 +1,35 @@
+{
+    "monthPlan": [
+        { "status": 0, "data": "Сделать 100 продаж", "category": "business" },
+        { "status": 1, "data": "Залить разработку по Терре на тестовый сервер", "category": "business" },
+        { "status": 0, "data": "Найти мобильного разработчика в проект", "category": "business" },
+        { "status": 0, "data": "Вложиться в догикоины", "category": "investments" },
+        { "status": 0, "data": "Дочитать книгу", "category": "growth" },
+        { "status": 0, "data": "Начать бегать по утрам", "category": "health" }
+    ],
+    "monthTarget": [
+        { "status": 0, "data": "Внедрить медитации", "category": "brightness" },
+        { "status": 1, "data": "Решить семейное", "category": "family"},
+        { "status": 0, "data": "Показать ребятам первую MVP SAMO", "category": "business" }
+    ],
+    "nextMonthTarget": [
+        { "data": "Подписать договор с инвесторами", "category": "business" },
+        { "data": "всякие цели", "category": "brightness" },
+        { "data": "просыпаться раньше", "category": "growth" }
+    ],
+    "nextMonthPlan": [
+        { "data": "Встреча с друзьями", "category": "friends" },
+        { "data": "Планерка по проекту Samo", "category": "business" },
+        { "data": "Очень важная встреча с инвесторами проекта", "category": "business" },
+        { "data": "Сходить в театр", "category": "brightness" },
+        { "data": "Свидание с Машей", "category": "family" },
+        { "data": "Записаться на занятия по йоге", "category": "health" },
+        { "data": "Курсы по саморазвитию и самодисциплине", "category": "growth" },
+        { "data": "Волонтерство", "category": "charity" }
+    ],
+    "monthDiary": [
+        {"headline": "Вывод недели", "data": "Неделя прошла не зря, понравилось высыпаться"},
+        {"headline": "Достижения недели", "data": "переборол ненависть к найму, прочитал книгу, написал пост в блог"},
+        {"headline": "Добрые дела", "data": "спас котёнка"}
+    ]
+  }
