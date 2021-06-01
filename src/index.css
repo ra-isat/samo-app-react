@@ -92,7 +92,7 @@ img {
     align-content: space-between;
     align-items: center;
     list-style: none;
-    padding: 16px 0px 34px 40px;
+    padding: 30px 0px 30px 40px;
 }
 
 .sidenav a {
@@ -170,6 +170,22 @@ img {
     margin-right: 42px;
 }
 
+.header_nav {
+    display: flex;
+    margin-right: 48px;
+}
+
+.header_nav-item {
+    margin-left: 12px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.active-period {
+    font-weight: bold;
+    border-bottom: 5px solid #6CFFD5;
+}
+
 .icon_search {
     width: 17px;
     height: 16px;
@@ -241,10 +257,11 @@ img {
 }
 
 .result-content {
-    margin: 38px 41px 32px 40px;
+    padding: 38px 41px 32px 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+    background: #F6F5FA;
 }
 
 .block {
@@ -339,7 +356,6 @@ img {
     line-height: 28px;
     font-size: 16px;
     padding-left: 8px;
-    max-width: 290px;
     position: relative;
     list-style: none;
 }
@@ -441,8 +457,6 @@ input[type="checkbox"] {
 
 
 /* edit field  */
-
-.add-task-field {}
 
 .add-task-list {
     padding: 10px;

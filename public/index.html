@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,13 +25,14 @@
     -->
     <title>React App</title>
     <link rel="stylesheet" href="../">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <div class="grid_container grid_active">
+    <!-- <div class="grid_container grid_active">
         <div class="sidenav">
             <h1 style="display: none;" class="logo_h">S</h1>
             <h1 class="logo_h">Samo</h1>
@@ -76,6 +78,10 @@
         <div class="header">
             <h1>Итоги</h1>
             <div class="header_profile">
+                <div class="header_nav">
+                    <div class="header_nav-item active-period" id="results_week">Неделя</div>
+                    <div class="header_nav-item" id="results_month">Месяц</div>
+                </div>
                 <div class="header-icons">
                     <img class="icon_search" src="icons/search.svg" alt="search">
                     <img class="icon_push" src="icons/push.svg" alt="push">
@@ -85,25 +91,25 @@
                     <img src="../src/img/profile.png" alt="profile">
                 </div>
             </div>
-        </div>
-        <div id="root">
+        </div> -->
+    <div id="root">
 
-        </div>
+    </div>
 
 
-        <script>
-            const sidenav = document.querySelector('.sidenav');
-            const btn = document.querySelector('.btn');
-            const img_nav = document.querySelector('.img_nav');
-            const grid_container = document.querySelector('.grid_container');
-            document.querySelector('.toggle').onclick = function() {
-                this.classList.toggle('active');
-                sidenav.classList.toggle('active');
-                btn.classList.toggle('btn_active');
-                img_nav.classList.toggle('img_active');
-                grid_container.classList.toggle('grid_active')
-            }
-        </script>
+    <script>
+        const sidenav = document.querySelector('.sidenav');
+        const btn = document.querySelector('.btn');
+        const img_nav = document.querySelector('.img_nav');
+        const grid_container = document.querySelector('.grid_container');
+        document.querySelector('.toggle').onclick = function() {
+            this.classList.toggle('active');
+            sidenav.classList.toggle('active');
+            btn.classList.toggle('btn_active');
+            img_nav.classList.toggle('img_active');
+            grid_container.classList.toggle('grid_active')
+        }
+    </script>
 </body>
 
 </html>

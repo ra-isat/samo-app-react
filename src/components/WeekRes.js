@@ -1,22 +1,33 @@
 import React from "react";
 import "../index.css";
-// import {useRef, useState} from 'react'
 
-export const Results = () => {
+// export const Results = () => {
+//   return (
+//     <>
+//       <PlanWeek />
+//       <TargetNextWeek />
+//       <DiaryWeek/>
+//       <TargetWeek />
+//       <PlanNextWeek />
+//       <Analytics />
+//     </>
+//   );
+// };
+export const WeekResult = () => {
   return (
     <>
-      <PlanMontn />
-      <TargetNextMonth />
-      <DiaryMonth />
-      <TargetMonth />
-      <PlanNextMonth />
+      <PlanWeek />
+      <TargetNextWeek />
+      <DiaryWeek/>
+      <TargetWeek />
+      <PlanNextWeek />
       <Analytics />
     </>
   );
 };
 
 const json = {
-  monthPlan: [
+  weekPlan: [
     { id: 1, status: 0, data: "Сделать 100 продаж", category: "business" },
     {
       id: 2,
@@ -39,7 +50,7 @@ const json = {
     { id: 5, status: 0, data: "Дочитать книгу", category: "growth" },
     { id: 6, status: 0, data: "Начать бегать по утрам", category: "health" },
   ],
-  monthTarget: [
+  weekTarget: [
     { id: 1, status: 0, data: "Внедрить медитации", category: "brightness" },
     { id: 2, status: 1, data: "Решить семейное", category: "family" },
     {
@@ -49,12 +60,12 @@ const json = {
       category: "business",
     },
   ],
-  nextMonthTarget: [
+  nextWeekTarget: [
     { id: 1, data: "Подписать договор с инвесторами", category: "business" },
     { id: 2, data: "всякие цели", category: "brightness" },
     { id: 3, data: "просыпаться раньше", category: "growth" },
   ],
-  nextMonthPlan: [
+  nextWeekPlan: [
     { id: 1, data: "Встреча с друзьями", category: "friends" },
     { id: 2, data: "Планерка по проекту Samo", category: "business" },
     {
@@ -72,7 +83,7 @@ const json = {
     },
     { id: 8, data: "Волонтерство", category: "charity" },
   ],
-  monthDiary: [
+  weekDiary: [
     {
       id: 1,
       headline: "Вывод недели",
@@ -87,198 +98,106 @@ const json = {
   ],
 };
 
-const EditField = () => {
-  // const [check, setCheck] = useState(false)
-  // const [progress, setprogress] = useState(100)
-  // const [text, setText] = useState(100)
 
-  // const textRef = useRef(null)
 
-  const handleAddText = () => {
-    // setText(textRef.current.value)
-    console.log(document.querySelector(".add-task-list"));
-  };
+const PlanWeek = () => {
+  const planWeekItem = json.weekPlan.map((item, i) => {
 
-  return (
-    <>
-      <div className="add-task-field">
-        <select className="add-task-list">
-          <option className="category-btn" disabled selected>
-            Выберите категорию
-          </option>
-          <option name="family" className="category-btn family-btn">
-            
-            Семья
-          </option>
-          <option name="business" className="category-btn business-btn">
-            
-            Работа
-          </option>
-          <option name="health" className="category-btn health-btn">
-            
-            Здоровье
-          </option>
-          <option name="investments" className="category-btn investments-btn">
-            
-            Инвестиции
-          </option>
-          <option name="growth" className="category-btn growth-btn">
-            
-            Личный рост
-          </option>
-          <option name="brightness" className="category-btn brightness-btn">
-            
-            Яркость жизни
-          </option>
-          <option name="friends" className="category-btn friends-btn">
-            
-            Друзья
-          </option>
-          <option name="charity" className="category-btn charity-btn">
-            Благотворительность
-          </option>
-        </select>
-        <div className="">
-          <input
-            placeholder="Новая цель"
-            type="text"
-            className="add-task-input"
-            rel="textRef"
-          />
-          <button className="add-task-btn" onClick={handleAddText}>
-            
-            +
-          </button>
-        </div>
-      </div>
-
-      {/* {
-      text 
-      ? 
-      <label className={item.category + " " + "checkbox"}>
-      <input type="checkbox" />
-      <span> {text} </span>
-    </label>
-    } */}
-    </>
-  );
-};
-
-// План месяца
-
-// const PlanMontnItem = () => {
-//   return (
-//     <label className="sunday checkbox">
-//       <input type="checkbox" />
-//       <span>Встреча с друзьями</span>
-//     </label>
-//   );
-// };
-
-const planMontnItem = json.monthPlan.map((item, i) => {
-  const handleRemoveItem = (event) => {
-    json.monthPlan.splice(i, 1);
-  };
-
-  return (
-    <label key={item.id} className={item.category + " " + "checkbox"}>
-      <input type="checkbox" />
-      <span> {item.data} </span>
-      <i id={i} onClick={handleRemoveItem}> x </i>
-    </label>
-  );
-});
-
-const PlanMontn = () => {
+    return (
+      <label key={item.id} className={item.category + " " + "checkbox"}>
+        <input type="checkbox" />
+        <span> {item.data} </span>
+      </label>
+    );
+  });
+  
   return (
     <div className="block plan-month_block">
       <div className="headline_block">
-        <h2> План месяца </h2>
+        <h2> План недели </h2>
         <img src="./icons/pencil.svg" alt="edit" className="edit" />
       </div>
       <div className="progress-block">
-        3 / {json.monthPlan.length}
+        3 / {json.weekPlan.length}
         <div className="progress-bar">
           <span style={{ width: "50%" }}> </span>
         </div>
       </div>
-      <EditField />
       <div className="plan-month_checkbox" id="month_plan">
-        {planMontnItem}
+        {planWeekItem}
       </div>
     </div>
   );
 };
 
-// Цель след месяца
-// const TargetNextMonthItem = () => {
-//   return <li className={json.nextMonthTarget[0].category}>Подписать договор с инвесторами</li>;
-// };
-const targetNextMonthItem = json.nextMonthTarget.map((item) => {
-  return <li className={item.category}> {item.data} </li>;
-});
+// Цель след недели
 
-const TargetNextMonth = () => {
+
+
+const TargetNextWeek = () => {
+
+  const targetNextWeekItem = json.nextWeekTarget.map((item) => {
+    return <li className={item.category}> {item.data} </li>;
+  });
+
   return (
     <div className="block target-next-month_block">
       <div className="headline_block">
-        <h2> Цели следующего месяца </h2>
+        <h2> Цели следующей недели </h2>
         <img src="./icons/pencil.svg" alt="edit" className="edit" />
       </div>
       <div>
         <ul className="block_list" id="next_month_target">
           
-          {targetNextMonthItem}
+          {targetNextWeekItem}
         </ul>
       </div>
     </div>
   );
 };
 
-// Дневник месяца
+// Дневник недели
 
-const diaryMonthItem = json.monthDiary.map((item) => {
-  return (
-    <div className="diary_paragraph">
-      <h2> {item.headline} </h2> <p id="conclusion"> {item.data} </p>
-    </div>
-  );
-});
-const DiaryMonth = () => {
+
+const DiaryWeek = () => {
+
+  const diaryWeekItem = json.weekDiary.map((item) => {
+    return (
+      <div className="diary_paragraph">
+        <h2> {item.headline} </h2> <p id="conclusion"> {item.data} </p>
+      </div>
+    );
+  });
+
   return (
     <div className="block diary-month_block">
       <div className="headline_block">
-        <h2> Дневник месяца </h2>
+        <h2> Дневник недели </h2>
         <img src="./icons/pencil.svg" alt="edit" className="edit" />
       </div>
-      {diaryMonthItem}
+      {diaryWeekItem}
     </div>
   );
 };
 
-// Цели месяца
-// const TargetMonthItem = () => {
-//   return (
-//     <label className="saturday checkbox">
-//       <input type="checkbox" />
-//       <span>Волонтерство</span>
-//     </label>
-//   );
-// };
-const targetMonthItem = json.monthTarget.map((item) => {
-  return (
-    <label className={item.category + " " + "checkbox"}>
-      <input type="checkbox" />
-      <span> {item.data} </span>
-    </label>
-  );
-});
 
-const TargetMonth = () => {
+
+
+const TargetWeek = () => {
+
+  const targetWeekItem = json.weekTarget.map((item) => {
+    return (
+      <label className={item.category + " " + "checkbox"}>
+        <input type="checkbox" />
+        <span> {item.data} </span>
+      </label>
+    );
+  });
+
   return (
     <div className="block target-month_block">
       <div className="headline_block">
-        <h2> Цели месяца </h2>
+        <h2> Цели недели </h2>
         <img src="./icons/pencil.svg" alt="edit" className="edit" />
       </div>
       <div className="progress-block">
@@ -289,32 +208,33 @@ const TargetMonth = () => {
       </div>
       <div className="target-month_checkbox" id="target-month">
         
-        {targetMonthItem}
+        {targetWeekItem}
       </div>
     </div>
   );
 };
 
-// План следующего месяца
+// План следующей недели
 
-// const PlanNextMonthItem = () => {
-//   return <li className="monday">Очень важная встреча с инвесторами проекта</li>;
-// };
-const planNextMonthItem = json.nextMonthPlan.map((item) => {
-  return <li className={item.category}> {item.data} </li>;
-});
 
-const PlanNextMonth = () => {
+
+
+const PlanNextWeek = () => {
+
+  const planNextWeekItem = json.nextWeekPlan.map((item) => {
+    return <li className={item.category}> {item.data} </li>;
+  });
+  
   return (
     <div className="block plan-next-month_block">
       <div className="headline_block">
-        <h2> План следующего месяца </h2>
+        <h2> План следующей недели </h2>
         <img src="./icons/pencil.svg" alt="edit" className="edit" />
       </div>
       <div>
         <ul className="block_list" id="next_month_plan">
           
-          {planNextMonthItem}
+          {planNextWeekItem}
         </ul>
       </div>
     </div>
@@ -354,5 +274,3 @@ const Analytics = () => {
     </div>
   );
 };
-
-export default Results;
